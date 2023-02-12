@@ -1,0 +1,12 @@
+<h1>{{.Title}}</h1>
+<div>Please enter message you want to convert to QR code.</div>
+<form action="/qr" method=post>
+    <input type="text" name="message" minlength="5" maxlength="300" required>
+    <input type="submit" value="Submit">
+</form>
+
+{{if .QR }}
+<h2>Result</h2>
+<div>{{ .Message }}</div>
+<img src={{ .QR }}>
+{{end}}
